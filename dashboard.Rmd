@@ -1,0 +1,80 @@
+---
+title: "Dashboard for NY NOAA dataset, 'LITTLE FALLS CITY RES' Station"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(ggridges)
+library(patchwork)
+library(plotly)
+
+library(p8105.datasets)
+```
+
+```{r}
+data("ny_noaa")
+
+ny_noaa = 
+  ny_noaa |> 
+  separate(date, into = c("year", "month", "day"), convert = TRUE) |> 
+  mutate(
+    tmax = as.numeric(tmax),
+    tmin = as.numeric(tmin)) |>
+  filter(id == "USC00304791") |>
+  mutate(name = "LITTLE FALLS CITY RES")
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Scatter Plot: Maximum Temperature vs. Minimum Temperature
+
+```{r}
+ny_noaa |> 
+  plot_ly(x = ~tmin, y = ~tmax,
+          type = 'scatter', mode = 'markers', alpha = 0.5) |>
+  layout(
+    title = "Scatter Plot of Maximum vs. Minimum Temperature",
+    xaxis = list(title = "Minimum Temperature"),
+    yaxis = list(title = "Maximum Temperature")
+  )
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Box Plot: Monthly Temperature Range
+
+```{r}
+ny_noaa <- ny_noaa |>
+  mutate(temp_range = tmax - tmin)
+
+ny_noaa |> 
+  plot_ly(x = ~month, y = ~temp_range, type = 'box') |>
+  layout(
+    title = "Box Plot of Monthly Temperature Range",
+    xaxis = list(title = "Month"),
+    yaxis = list(title = "Temperature Range"))
+```
+
+### Bar Chart: Total Monthly Precipitation by Station
+
+```{r}
+monthly_precipitation <- ny_noaa |>
+  group_by(month, name) |>
+  summarize(total_prcp = sum(prcp, na.rm = TRUE), .groups = 'drop')
+
+monthly_precipitation |>
+  plot_ly(x = ~month, y = ~total_prcp, type = 'bar') |>
+  layout(
+    title = "Bar Plot of Total Monthly Precipitation by Station",
+    xaxis = list(title = "Month"),
+    yaxis = list(title = "Total Precipitation"))
+```
+
