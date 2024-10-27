@@ -1,0 +1,51 @@
+---
+title: "Chenyu Jin Resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+### EDUCATION
+
+**Columbia University Mailman School of Public Health**
+
+*Master of Public Health in Biostatistics* (09/2023-05/2025)
+
+**University of Liverpool**
+
+*Bachelor of Science in Financial Mathematics* (09/2019-07/2023)
+
+### PROFESSIONAL EXPERIENCE
+
+*Evaluation Intern* | **Heluna Health**, California, U.S. (05/2024 – 08/2024)
+
+- Supported the creation of the SisterWeb 2023-2024 Fiscal Year Impact Report, focusing on community-driven health impacts.
+
+*Risk Advisory/Audit Intern* | **KPMG**, China (06/2021 – 03/2022) 
+
+- Conducted annual and IPO audits for two medical device companies, collaborating closely with the auditing team.
+
+- Assisted the risk advisory team in analyzing a large biomedical company, providing solutions for financial risk management.
+
+### RESEARCH & PROJECTS
+
+**Early-Life Exposure to Air Pollution and Development of Schizophrenia in Chile** 
+
+*Research Assistant* | Mailman Research Project (09/2024 – Present)  
+
+- Conducting a feasibility study on the impact of early-life air pollution exposure on schizophrenia risk, with Chile as a novel setting to examine environmental and social interactions.
+
+**Identifying Pandemic Psychiatric Symptom Networks of U.S. College Students** 
+
+*Research Assistant* | Mailman Research Project (06/2024 – 09/2024)
+
+- Analyzed networks of psychiatric symptoms (Depression, Anxiety, and Loneliness) among U.S. college students during COVID-19, exploring associated factors like Financial Hardship and Substance Abuse.
+
+**Exploring Sex and Genetic Risk Factors for Cognitive Impairment in Late Middle-Aged Adults**  
+
+*Research Assistant* | Mailman Research Project (02/2024 – 06/2024) 
+
+- Conducted research to identify if there are significant differences in mean Aβ levels between APOE-ε4 carrier statuses (genetic risk factor) or sexes.
+
+**Here, you can go back to [home](index.html) page.**
